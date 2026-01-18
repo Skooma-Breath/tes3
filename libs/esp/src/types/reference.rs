@@ -130,7 +130,7 @@ impl Save for Reference {
             if !scale_is_default || (self.mast_index != 0) {
                 stream.save(b"XSCL")?;
                 stream.save(&4u32)?;
-                stream.save(&scale)?;
+                stream.save(scale)?;
             }
         }
         // ANAM
