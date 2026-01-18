@@ -125,7 +125,7 @@ impl Save for Reference {
         }
         // XSCL
         if let Some(value) = &self.scale {
-            let scale = value.clamp(0.5, 2.0);
+            let scale = value;
             let scale_is_default = (scale - 1.0).abs() < 1e-6;
             if !scale_is_default || (self.mast_index != 0) {
                 stream.save(b"XSCL")?;
